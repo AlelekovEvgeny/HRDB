@@ -3,11 +3,12 @@ package com.folders.hrdb.service;
 import com.folders.hrdb.DAO.HrDAO;
 import com.folders.hrdb.entity.Hr;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HrService {
-    public void creatHrData(String[] arrayHrData) {
+    public void creatHrData(String[] arrayHrData) throws SQLException {
         Hr hr = new Hr();
         HrDAO hrDAO = new HrDAO();
         List<Hr> hrDataList = new ArrayList<>();

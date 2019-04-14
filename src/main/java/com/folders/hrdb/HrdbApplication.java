@@ -4,14 +4,14 @@ import com.folders.hrdb.service.HrService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class HrdbApplication {
 
-	public static void main(String[] args) {
-		//SpringApplication.run(HrdbApplication.class, args);
-
+	public static void main(String[] args) throws SQLException {
+	//	SpringApplication.run(HrdbApplication.class, args);
 		HrService hrService = new HrService();
 
 		Scanner inSurname = new Scanner(System.in);

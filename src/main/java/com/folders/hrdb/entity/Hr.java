@@ -43,8 +43,8 @@ public class Hr {
 
     @Override
     public String toString() {
-        return "insert into hrdata s values (" +
-                "'','" + surname +'\'' +
+        return "insert into hrdata values (" +
+                "'1','" + surname +'\'' +
                 ", '" + firstname +'\'' +
                 ", '" + company +'\'' +
                 ", '" + telefon +'\'' +

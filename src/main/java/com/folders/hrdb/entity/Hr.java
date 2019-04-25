@@ -1,12 +1,30 @@
 package com.folders.hrdb.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "HRDATA")
 public class Hr {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String surname;
-    private String firstname;
+    private String firstName;
     private String company;
-    private String telefon;
+    private String telephone;
 
     public Hr() {
+    }
+
+    public Hr(String surnameScan, String firstNameScan, String companyScan, String telephoneScan) {
+        this.surname = surnameScan;
+        this.firstName = firstNameScan;
+        this.company = companyScan;
+        this.telephone = telephoneScan;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getSurname() {
@@ -17,12 +35,12 @@ public class Hr {
         this.surname = surname;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getfirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getCompany() {
@@ -33,21 +51,22 @@ public class Hr {
         this.company = company;
     }
 
-    public String getTelefon() {
-        return telefon;
+    public String gettelephone() {
+        return telephone;
     }
 
-    public void setTelefon(String telefon) {
-        this.telefon = telefon;
+    public void settelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     @Override
     public String toString() {
-        return "insert into hrdata values (" +
-                "'1','" + surname +'\'' +
-                ", '" + firstname +'\'' +
-                ", '" + company +'\'' +
-                ", '" + telefon +'\'' +
-                ",sysdate)";
+        return "models.Hrs{" +
+                "id=" + id +
+                ", surname='" + surname + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", company='" + company + '\'' +
+                ", telephone=" + telephone +
+                '}';
     }
 }

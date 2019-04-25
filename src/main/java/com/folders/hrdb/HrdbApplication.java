@@ -1,38 +1,29 @@
 package com.folders.hrdb;
 
+import com.folders.hrdb.entity.Hr;
 import com.folders.hrdb.service.HrService;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.sql.SQLException;
 import java.util.Scanner;
 
-@SpringBootApplication
 public class HrdbApplication {
 
-	public static void main(String[] args) throws SQLException {
-	//	SpringApplication.run(HrdbApplication.class, args);
+	public static void main(String[] args) {
 		HrService hrService = new HrService();
 
 		Scanner inSurname = new Scanner(System.in);
 		System.out.println("enter a surname");
 		String surnameScan = inSurname.next();
-		Scanner inFirstname = new Scanner(System.in);
-		System.out.println("enter a firstname");
-		String firstnameScan = inFirstname.next();
+		Scanner infirstName = new Scanner(System.in);
+		System.out.println("enter a firstName");
+		String firstNameScan = infirstName.next();
 		Scanner inCompany = new Scanner(System.in);
 		System.out.println("enter a company");
 		String companyScan = inCompany.next();
-		Scanner inTelefon = new Scanner(System.in);
-		System.out.println("enter a telefon");
-		String telefonScan = inTelefon.next();
+		Scanner intelephone = new Scanner(System.in);
+		System.out.println("enter a telephone");
+		String telephoneScan = intelephone.next();
 
-		String[] arrayHrData = new String[4];
-		arrayHrData[0] = surnameScan;
-		arrayHrData[1] = firstnameScan;
-		arrayHrData[2] = companyScan;
-		arrayHrData[3] = telefonScan;
-
-		hrService.creatHrData(arrayHrData);
+		Hr hr = new Hr(surnameScan,firstNameScan,companyScan,telephoneScan);
+		hrService.saveHr(hr);
 	}
 }
